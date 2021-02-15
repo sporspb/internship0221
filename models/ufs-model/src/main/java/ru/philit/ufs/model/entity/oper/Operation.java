@@ -1,5 +1,6 @@
 package ru.philit.ufs.model.entity.oper;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,5 +25,25 @@ public class Operation extends ExternalEntity {
   private Date createdDate;
   private Date committedDate;
   private String rollbackReason;
+  private String operationId;
+  // private OperTypeLabel operationType;
+  private String workPlaceUId;
+  private String operatorId;
+  private String cashOrderId;
+  private String operationNum;
+  // private OpStatusType operationStatus;
+  private String repId;
+  private String senderAccountTypeId;
+  private String senderAccountCurrencyType;
+  private String senderBank;
+  //private String senderBankBIC;
+  private String senderAccountId;
+  private BigDecimal amount;
+  private String recipientAccountTypeId;
+  private String recipientAccountCurrencyType;
+  private String recipientBank;
+  //private String recipientBankBIC;
+  private String recipientAccountId;
+  private String currencyType;
 
 }
