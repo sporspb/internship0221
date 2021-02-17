@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.UUID;
 import ru.philit.ufs.model.converter.esb.CommonAdapter;
 import ru.philit.ufs.model.entity.common.ExternalEntity;
-import ru.philit.ufs.model.entity.esb.as_fs.HeaderInfoType;
+import ru.philit.ufs.model.entity.esb.asfs.HeaderInfoType;
 
 /**
  * Базовый класс для конвертеров Сущностей и транспортных объектов Мастер-системы ЕКС.
