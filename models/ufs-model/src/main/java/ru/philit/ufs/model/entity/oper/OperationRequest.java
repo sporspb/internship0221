@@ -12,6 +12,7 @@ import lombok.ToString;
 @Setter
 public class OperationRequest {
 
+  private int operationId;
   private XMLGregorianCalendar createdFrom;
   private XMLGregorianCalendar createdTo;
 

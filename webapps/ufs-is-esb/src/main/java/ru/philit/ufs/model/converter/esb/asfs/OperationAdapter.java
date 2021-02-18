@@ -1,15 +1,15 @@
 package ru.philit.ufs.model.converter.esb.asfs;
 
 import java.util.List;
-import ru.philit.ufs.model.entity.account.Representative;
 import ru.philit.ufs.model.entity.common.OperationTypeCode;
 import ru.philit.ufs.model.entity.esb.asfs.OpStatusType;
 import ru.philit.ufs.model.entity.esb.asfs.OperTypeLabel;
+import ru.philit.ufs.model.entity.esb.asfs.SrvCreateOperationRq;
+import ru.philit.ufs.model.entity.esb.asfs.SrvCreateOperationRq.SrvCreateOperationRqMessage;
 import ru.philit.ufs.model.entity.esb.asfs.SrvGetOperationRq;
 import ru.philit.ufs.model.entity.esb.asfs.SrvGetOperationRq.SrvGetOperationRqMessage;
 import ru.philit.ufs.model.entity.esb.asfs.SrvGetOperationRs;
 import ru.philit.ufs.model.entity.esb.asfs.SrvGetOperationRs.SrvGetOperationRsMessage.OperationItem;
-import ru.philit.ufs.model.entity.esb.pprb.SrvGetRepByCardRs;
 import ru.philit.ufs.model.entity.oper.Operation;
 import ru.philit.ufs.model.entity.oper.OperationRequest;
 import ru.philit.ufs.model.entity.oper.OperationStatus;
@@ -45,8 +45,17 @@ public class OperationAdapter extends AsfsAdapter {
   public static SrvGetOperationRq requestByParams(OperationRequest params) {
     SrvGetOperationRq request = new SrvGetOperationRq();
     request.setHeaderInfo(headerInfo());
-    request.setSrvGetOperationRqMessage(new SrvGetOperationRq().getSrvGetOperationRqMessage());
+    request.setSrvGetOperationRqMessage(new SrvGetOperationRqMessage());
     map(params, request.getSrvGetOperationRqMessage());
+    return request;
+  }
+
+  public static SrvCreateOperationRq requestCreateOperation(Operation operation) {
+    SrvCreateOperationRq request = new SrvCreateOperationRq();
+    request.setHeaderInfo(headerInfo());
+    request.setSrvCreateOperationRqMessage(new SrvCreateOperationRqMessage());
+    //map(operation, request.getSrvCreateOperationRqMessage());
+
     return request;
   }
 
@@ -59,8 +68,6 @@ public class OperationAdapter extends AsfsAdapter {
     map(response.getSrvGetOperationRsMessage().getOperationItem(), operation);
     return operation;
   }
-
-
 
 
 }
