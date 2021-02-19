@@ -1,6 +1,7 @@
 package ru.philit.ufs.model.entity.oper;
 
-import javax.xml.datatype.XMLGregorianCalendar;
+import java.io.Serializable;
+import java.util.GregorianCalendar;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,10 +11,10 @@ import lombok.ToString;
 @ToString
 @Getter
 @Setter
-public class OperationRequest {
+public class OperationRequest implements Serializable {
 
-  private int operationId;
-  private XMLGregorianCalendar createdFrom;
-  private XMLGregorianCalendar createdTo;
+  private String operationId;
+  private GregorianCalendar createdFrom;
+  private GregorianCalendar createdTo;
 
 }
