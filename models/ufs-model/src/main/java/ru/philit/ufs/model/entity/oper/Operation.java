@@ -2,6 +2,7 @@ package ru.philit.ufs.model.entity.oper;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -43,5 +44,5 @@ public class Operation extends ExternalEntity {
   private String recipientBankBic;
   private String recipientAccountId;
   private String currencyType;
-
+  private String responseCode;
 }
